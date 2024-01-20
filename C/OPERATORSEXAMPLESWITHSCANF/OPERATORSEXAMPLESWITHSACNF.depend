@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1701932725 source:c:\users\user\desktop\ai_batch01\project\operatorsexampleswithsacnf\main.c
+	<stdio.h>
+	<stdlib.h>
+
