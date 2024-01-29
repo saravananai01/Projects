@@ -57,11 +57,10 @@ int main()
     cin >> Rnu1;
     int a2=Rnu1;
     Namechecking nc3(a,a1,a2);
-    /*cout <<"Enter Your Age...\n";
+    cout <<"Enter Your Age...\n";
     int age;
     cin >>age;
     int a3=age;
     nc.agechecking(a,a1,a2,a3);
-   */
     return 0;
 }
