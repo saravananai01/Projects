@@ -7,6 +7,7 @@ class Bike
     private:
         string BkBrand;
         string BkModel;
+        string Bkprice;
 
 
     public:
@@ -15,7 +16,6 @@ class Bike
     {
         cout <<"Enter Your BikeName : ";
         cin >> BkBrand;
-        cout <<"Ready To Race>>"<< BkBrand <<endl;
     }
 
     string getbikebrand()
@@ -26,7 +26,6 @@ class Bike
     {
         cout <<"Enter Your BikeModels : ";
         cin >> BkModel;
-        cout <<"Ready To Race>>" <<BkModel<< endl;
     }
 
     string getbikemodel()
@@ -35,23 +34,22 @@ class Bike
     }
 };
 
-class Bkprice39t
+class Bkprice39t:public Bike
 {
     public:
+        string p="Bkprice";
     void setbkprice()
     {
-        cout <<"Enter Your Bikemodelname : ";
-        string Bkprice;
-        cin >> Bkprice;
-        cout <<"Your BikePrice" << Bkprice << endl;
+        cout <<"Enter Your BikePrice : ";
+        cin >> p;
     }
 
-    string getbikeprice()
+    string getbkprice()
     {
-        return Bkprice;
+        return p;
     }
 };
-class sportsbikes : public Bike,public Bkprice39t{
+class sportsbikes :public Bkprice39t{
 };
 
 int main()
@@ -60,5 +58,8 @@ int main()
     sb.setbikebrand();
     sb.setbikemodel();
     sb.setbkprice();
+    cout <<"Ready To Race>>" << sb.getbikebrand() << endl;
+    cout <<"Your BikeModel" << sb.getbikemodel() << endl;
+    cout <<"Your BikePrice"<< sb.getbkprice() << endl;
     return 0;
 }
