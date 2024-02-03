@@ -8,6 +8,7 @@ class Bike
         string BkBrand;
         string BkModel;
         string Bkprice;
+        string Bkkm;
 
 
     public:
@@ -49,7 +50,32 @@ class Bkprice39t:public Bike
         return p;
     }
 };
-class sportsbikes :public Bkprice39t{
+class sportsbikes :public Bkprice39t
+{
+    public:
+    string A="Bkkm";
+
+    void setflp()
+    {
+        cout <<"Enter Your BikeKm/h :";
+        cin >> A;
+
+        if(A=="5000Km")
+        {
+            cout << "Your BikeKm/h " + A + "Your Fule Price" <<endl;
+        }
+        else
+        {
+            cout << "Your Bike Km/h" + A + "Your Fule Price" <<endl;
+        }
+
+    }
+
+    string getflp()
+    {
+        return A;
+    }
+
 };
 
 int main()
@@ -58,8 +84,10 @@ int main()
     sb.setbikebrand();
     sb.setbikemodel();
     sb.setbkprice();
+    sb.setflp();
     cout <<"Ready To Race>>" << sb.getbikebrand() << endl;
     cout <<"Your BikeModel" << sb.getbikemodel() << endl;
     cout <<"Your BikePrice"<< sb.getbkprice() << endl;
+    cout << "Your Your BikeKm/h " <<sb.getflp() << endl;
     return 0;
 }

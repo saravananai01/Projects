@@ -3,31 +3,45 @@
 
 int main()
 {
-    int a=20,b=40;
-    printf("Value of A               : %d\n",a);
-    printf("Addres Of The A          : %d\n", &a);
-    printf("------------------------\n");
-    printf("VAlue Of B               : %d\n",b);
-    printf("Addres Of The B          : %d\n", &b);
-    printf("------------------------\n");
+
+    char a[20]="Yogarajan K";
+
+    printf("Value Of A       : %s\n",a);
+    printf("Address Of The A : %p\n",&a);
+
+
+
+
+
+
+
+    /*int a=20,b=40;
+    printf("Value of A                : %d\n",a);
+    printf("Address Of The A          : %p\n", &a);
+    printf("________________________________\n");
+    printf("Value Of B                : %d\n",b);
+    printf("Address Of The B          : %p\n", &b);
+    printf("________________________________\n");
     int *p=&a;
-    printf("Value Of P               : %d\n",p);
-    printf("Addres Of The P          : %d\n", &p);
-    printf("Stored Addres Of The *p  : %d\n", *p);
-    printf("------------------------\n");
+    printf("Value Of P                : %p\n",p);
+    printf("Address Of The P          : %p\n", &p);
+    printf("Stored Address Of The *p  : %d\n", *p);
+    printf("________________________________\n");
     int **s=&p;
-    printf("Value Of S               : %d\n",s);
-    printf("Addres Of The S          : %d\n", &s);
-    printf("Stored Addres Of The **S : %d\n", **s);
-    printf("------------------------\n");
+    printf("Value Of S                : %p\n",s);
+    printf("Address Of The S          : %p\n", &s);
+    printf("Stored Address Of The **S : %d\n", **s);
+    printf("________________________________\n");
      int ***k=&s;
-    printf("Value Of K               : %d\n",k);
-    printf("Addres Of The K          : %d\n", &k);
-    printf("Stored Addres Of The ***K: %d\n", ***k);
-    printf("------------------------\n");
+    printf("Value Of K                : %p\n",k);
+    printf("Address Of The K          : %p\n", &k);
+    printf("Stored Address Of The ***K: %d\n", ***k);
+    printf("________________________________\n");
     void *v=&a;
-    printf("Value Of K               : %d\n",v);
-    printf("Addres Of The K          : %d\n", &v);
-    printf("Stored Addres Of The ***K: %d\n", *(int*)v);
+    printf("Value Of K                : %p\n",v);
+    printf("Address Of The K          : %p\n", &v);
+    printf("Stored Address Of The ***K: %d\n", *(int*)v);
+    printf("________________________________\n");
+    */
     return 0;
 }
