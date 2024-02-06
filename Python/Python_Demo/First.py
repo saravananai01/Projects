@@ -1,4 +1,4 @@
-"""#Hello World:
+#Hello World:
 
 print("Hello World");
 print("Welcome To Saravanan");
@@ -35,10 +35,10 @@ print("A greter Than B") if a>b else print("A And B Is Equal") if a==b else prin
 if a>b and c>d :
     print("Both Condition Same");
 if a>b or c>d :
-    print("Any Condtion is True")"""
+    print("Any Condtion is True")
 
 
-'''#Concatinate:
+#Concatinate:
 First_name=input("Enter Your First_name :");
 Last_name=input("Enter Your Last_name   :");
 print("Your First_name :",First_name);
@@ -50,12 +50,78 @@ print(First_name.strip());
 print(First_name.upper());
 print(Last_name.lower());
 print(First_name.title());
-print(First_name.replace("S","s"));'''
+print(First_name.replace("S","s"));
+
+#While Condition:
 
 i=int (input("Enter Your Value I :"));
 
-i = 1
 while i < 10:
     print (i)
     i += 1
     
+#While Break Statement:
+
+while i<20:
+    print(i)
+    if(i==20):
+        break
+    i +=1
+
+#While Continue Statement:
+    
+while i<30:
+    i += 1
+    if (i==30):
+        continue
+    print(i)
+
+#while else statement:
+while i<20:
+    print(i)
+    i += 1
+else:
+    print("I Is longer Less Than 20")
+
+
+#For Loop:
+  #List[]:
+fruits=["Apple","Banana","Cherry","Orange","lemon","Mango"]
+for y in fruits:
+    print(y)
+
+for z in "Apple":
+    print(z)
+
+fruits=["Apple","Banana","Cherry","Orange","lemon","Mango"]
+for x in fruits:
+    if x == "lemon":
+        break
+    print(x)
+
+#range:1
+for x in range(10):
+    print(x)
+
+#range:2
+for y in range(2,20):
+    print(y)
+
+#range:3
+for x in range(3,40,4):
+    print(x)
+
+#range:4
+a=int(input("Enter Your Number :"))
+for x in range(a):
+    print(x)
+else:
+    print("Finaly Finished")
+
+color=["Red","Big","Tasty"]
+fruits=["Apple","Banana","Cherry","Orange","lemon","Mango"]
+
+for x in color:
+    for y in fruits:
+        print(x,y)
+ 
