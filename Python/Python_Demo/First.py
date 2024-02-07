@@ -1,4 +1,4 @@
-'''#Hello World:
+#Hello World:
 
 print("Hello World")
 print("Welcome To Saravanan",end="\t")
@@ -200,4 +200,4 @@ Number2=input("Enter Your Number : ").split(",")
 Number1.append(0)
 Number2.clear()
 x=Number1.copy()
-print(Number1)'''
+print(Number1)
