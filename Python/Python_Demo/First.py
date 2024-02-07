@@ -1,7 +1,9 @@
-#Hello World:
+'''#Hello World:
 
-print("Hello World");
-print("Welcome To Saravanan");
+print("Hello World")
+print("Welcome To Saravanan",end="\t")
+print('Helo world welcome to you')
+
 a=10;
 b=50;
 d=a+b;
@@ -86,18 +88,30 @@ else:
 
 #For Loop:
   #List[]:
-fruits=["Apple","Banana","Cherry","Orange","lemon","Mango"]
+fruits=(input("Enter Your Value I :")).split(",")
+#fruits=["Apple","Banana","Cherry","Orange","lemon","Mango"]
 for y in fruits:
     print(y)
 
 for z in "Apple":
     print(z)
 
+#fruits=(input("Enter Your Value I :")).split(",")
 fruits=["Apple","Banana","Cherry","Orange","lemon","Mango"]
 for x in fruits:
     if x == "lemon":
         break
-    print(x)
+    z=x.split(",")
+    print(z)
+
+
+fruits=(input("Enter Your Value I :")).split(",")
+for x in fruits:
+    if x == "banana":
+        continue
+    z=x.split(",")
+    print(z)
+
 
 #range:1
 for x in range(10):
@@ -124,4 +138,66 @@ fruits=["Apple","Banana","Cherry","Orange","lemon","Mango"]
 for x in color:
     for y in fruits:
         print(x,y)
- 
+
+#fuction:
+def my_fuction(f_name):
+    print(f_name + "Std")
+
+my_fuction("Zara ")
+my_fuction("Darko ")
+my_fuction("Ealini ")
+
+def my_fuction(f_name,l_name):
+    print(f_name + " " + l_name)
+
+my_fuction("Zara","zyana")
+
+#Particulare Name def_function:
+
+def my_function(*kids):
+    print("The yougest kids is " + kids[3])
+
+my_function("Zara","Elanila","Vainavi","Eyalini")
+
+def my_function1(kids1,kids2,kids3):
+    print("The elder kids is " + kids2)
+my_function1(kids1="zayana",kids2="Vainavi",kids3="Eyalini")
+
+def my_function(x):
+    return 5 + x
+print(my_function(6))
+print(my_function(8))
+print(my_function(9))
+
+    #Array:
+
+bike=["Duke","Mt-15","R15"] 
+x1=len(bike)
+print(x1)
+
+bike1=["BMw","Duke","Mt-15","R15"]
+for x in bike1:
+    print(x)
+number=[1,0,9,7,5,2,4,8,6,3]
+bike2=["BMw","Duke","Mt-15","R15","Hero","Honda"]
+bike_name=["Hero","Honda"]
+bike2.append("Pulsur")
+bike2.pop(1)
+bike2.insert(4,"Pulsur")
+bike2.remove("Duke")
+bike2.clear()
+bike_copy=bike2.copy()
+x=bike2.count("Duke")
+bike2.extend(bike_name)
+index = bike2.index("BMw")
+bike2.reverse()
+number.sort()
+number.sort(reverse=True)
+print(number)
+
+Number1=input("Enter Your Number : ").split(",")
+Number2=input("Enter Your Number : ").split(",")
+Number1.append(0)
+Number2.clear()
+x=Number1.copy()
+print(Number1)'''
