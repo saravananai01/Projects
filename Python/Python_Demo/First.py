@@ -1,7 +1,7 @@
-#Hello World:
+'''#Hello World:
 
+print("Welcome To You",sep=" ",end="\t")
 print("Hello World")
-print("Welcome To Saravanan",end="\t")
 print('Helo world welcome to you')
 
 a=10;
@@ -200,4 +200,26 @@ Number2=input("Enter Your Number : ").split(",")
 Number1.append(0)
 Number2.clear()
 x=Number1.copy()
-print(Number1)
+print(Number1)'''
+
+    #Class:
+ #without ___str___ function:
+class std_name:
+    def __init__(self,name,age,address):
+        self.stname=name
+        self.stage=age
+        self.staddress=address
+s1=std_name("Saravanan",20,"Peravurani")
+print(s1.stname)
+print(s1.staddress)
+print(s1.stage)
+
+
+class cstname:
+    def __init__(self,name,age):
+        self.csname=name
+        self.csage=age
+
+    def __str__(self):
+        return f"{self.name}({self.csage})"
+    s1.
