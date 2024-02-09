@@ -1,4 +1,4 @@
-'''#Hello World:
+#Hello World:
 
 print("Welcome To You",sep=" ",end="\t")
 print("Hello World")
@@ -200,7 +200,7 @@ Number2=input("Enter Your Number : ").split(",")
 Number1.append(0)
 Number2.clear()
 x=Number1.copy()
-print(Number1)'''
+print(Number1)
 
     #Class:
  #without ___str___ function:
@@ -221,5 +221,55 @@ class cstname:
         self.csage=age
 
     def __str__(self):
-        return f"{self.name}({self.csage})"
-    s1.
+        return f"{self.csname}({self.csage})"
+    
+c1=cstname("saravanan",20)
+print(c1)
+
+# Inheritance Class:
+
+class sclfrds:
+
+    def __init__(self,sclf_name,sclf_cls):
+        self.sclfrd_name=sclf_name
+        self.sclfrd_cls=sclf_cls
+    
+    def enjoy(self):
+        print("Most Mermorables Friends",self.sclfrd_name,"Memorables Places",self.sclfrd_cls)
+    
+# x=sclfrds("Pugal","C2")
+# x.enjoy()
+
+# class clgfrds(sclfrds):
+#     pass
+        
+# x=clgfrds("Pugal","C2")
+# x.enjoy()
+        
+class clgfrds(sclfrds):
+    def __init__(self, sclf_name, sclf_cls,clgf_name,clgdpt_name):
+        self.clgfrd_name=clgf_name
+        self.clg_f_dpt_name=clgdpt_name
+        super().__init__(sclf_name, sclf_cls)
+    
+    def lovenjoy(self):
+        print("Most Mermorables Friends",self.sclfrd_name,"Memorables Places",self.sclfrd_cls,"Most Trave in my life",self.clg_f_dpt_name,"Most Feeling In The Place's",self.clg_f_dpt_name)
+
+# x=clgfrds("Pugal","C2","Sabri","Chemistry")
+# x.enjoy()
+# x.lovenjoy()
+class course(clgfrds):
+    def __init__(self, sclf_name, sclf_cls, clgf_name, clgdpt_name,courf_name,cour_name):
+        self.courfrd_name=cour_name
+        self.cours_name=cour_name
+        super().__init__(sclf_name, sclf_cls, clgf_name, clgdpt_name)
+
+    def laststudy(self):
+        print("Most Mermorables Friends",self.sclfrd_name,"Memorables Places",self.sclfrd_cls,
+                "Most Trave in my life",self.clg_f_dpt_name,"Most Feeling In The Place's",self.clg_f_dpt_name,
+                    "Carrier Choosing ",self.cours_name,"Life & Carrier Way's",self.cours_name)
+
+x=course("Pugal","BusStop","Sabri","Chemistry","Arun","Ai_Devl")
+x.enjoy()
+x.lovenjoy()
+x.laststudy()
