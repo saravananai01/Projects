@@ -1,6 +1,7 @@
 from tkinter import *
+import tkinter as tk
 import mysql.connector
-details=Tk()
+details=tk.Tk()
 details.title("Studens Details")
 details.geometry("700x700")
 
@@ -16,6 +17,26 @@ def MyDBConnection():
 
     return dbcon
     # print("connect to database",dbcon)
+
+def quit():
+    details.destroy()
+
+def aboutpage():
+    abt=tk.Tk()
+    abt.title("About us")
+    abt.geometry("300x300")
+    """Welcome to parent window
+    created on : 21-02-2024
+    by Karthick AG
+    """
+    message="""Welcome to parent window
+    created on : 22-02-2024
+    by "DARGO"
+    """
+    lntinfo=tk.Label(abt,text=message)
+    lntinfo.pack()
+    abt.mainloop()
+
 def insert():
     a=vlinput1.get()
     b=vlinput2.get()
@@ -163,5 +184,40 @@ clrbtn=Button(details,text="Clear",font=("Times New Roman", 10),activebackground
 clrbtn.grid(row=22,column=25)
 
 
+# Menu Bar :
+menubar=tk.Menu(details)
+filemenu=tk.Menu(menubar,tearoff=0)
+menubar.add_cascade(label="File",menu=filemenu,underline=0)
+filemenu.add_command(label="New",underline=0,accelerator="Alt+N")
+filemenu.add_command(label="New Window",underline=4,accelerator="Alt+W")
+filemenu.add_command(label="Open",underline=0,accelerator="Alt+O")
+filemenu.add_command(label="Save",underline=0,accelerator="Alt+S")
+filemenu.add_command(label="Save As",underline=4,accelerator="Alt+A")
+filemenu.add_separator()
+filemenu.add_command(label="PageSetup",underline=7,accelerator="Alt+U")
+filemenu.add_command(label="Print",underline=0,accelerator="Alt+P")
+filemenu.add_separator()
+filemenu.add_command(label="Exit",underline=1,command=quit,accelerator="Ctr+X")
 
+# Edit Bar :
+editmenu=tk.Menu(menubar, tearoff=0)
+menubar.add_cascade(label="Edit",menu=editmenu)
+editmenu.add_command(label="Undo",  underline=0, accelerator="Ctr+Z")
+editmenu.add_command(label="Redo",  underline=4, accelerator="Ctr+X")
+editmenu.add_separator()
+editmenu.add_command(label="Copy",  underline=0, accelerator="Ctr+C")
+editmenu.add_command(label="Cut",  underline=0, accelerator="Ctr+X")
+editmenu.add_command(label="Paste",  underline=0, accelerator="Ctr+V")
+
+# View Bar:
+viewmenu=tk.Menu(menubar)
+menubar.add_cascade(label="View")
+
+# Help Bar :
+helpmenu=tk.Menu(menubar,tearoff=0)
+menubar.add_cascade(label="Help",menu=helpmenu)
+helpmenu.add_command(label="About",  underline=0, accelerator="Alt+A", command=aboutpage)
+
+
+details.config(menu=menubar)
 details.mainloop()
