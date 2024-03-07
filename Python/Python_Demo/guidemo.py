@@ -108,21 +108,8 @@
 # btndiv=Button(calculation,text="Divison / ",command=devison)
 # btndiv.grid(row=7,column=1)
 
-# btnmod=Button(calculation,text="Modules % ",command=modulus)
-# btndiv.grid(row=8,column=1)
+    # btnmod=Button(calculation,text="Modules % ",command=modulus)
+    # btndiv.grid(row=8,column=1)
 # calculation.mainloop()
 
 
-from tkinter import *
-
-aathar=Tk()
-aathar.title("Verify Aathar")
-aathar.geometry("600x600")
-# Label(aathar,text="Enter Your Name")
-Label(aathar,text="Fisrt_Name").grid(row=1,column=0)
-Label(aathar,text="Last_Name").grid(row=2,column=0)
-f1=Entry(aathar)
-f2=Entry(aathar)
-f1.grid(row=1,column=1)
-f2.grid(row=2,colum=1)
-aathar.mainloop()

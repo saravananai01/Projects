@@ -73,19 +73,36 @@ def updatetodb():
 
     y=mydbcon.updatevalue(student_S_no,student_name1,student_age1,st_mk_tam1,st_mk_eng1,st_mk_math1,st_mk_sci1,st_mk_ss1)
     lblconmsg1.config(text=y)
-    selectdatas()
+    selectdatas2()
 
-# def selectdatas():
-#     data=mydbcon.mydbconnection()
-#     result=data.cursor()
-#     result.execute("select * from Student_Mark_List")
-#     i=0
-#     for ai_saravanan in result:
-#       for j in range(len(ai_saravanan)):
-#           lbldisplay=Entry(resultframe,width=10,fg="blue")
-#           lbldisplay.grid(row=i,column=j)
-#           lbldisplay.insert(END,ai_saravanan[j])
-#       i=i+1
+def selectdatas2():
+    data=mydbcon.mydbconnection()
+    result=data.cursor()
+    result.execute("select * from Student_Mark_List")
+    i=0
+    for ai_saravanan in result:
+      for j in range(len(ai_saravanan)):
+          lbldisplay=Entry(resultframe1,width=10,fg="blue")
+          lbldisplay.grid(row=i,column=j)
+          lbldisplay.insert(END,ai_saravanan[j])
+      i=i+1
+
+def delete():
+    dlt_std_S_no=ety_std_sno.get()
+    x2=mydbcon.deletevalue(dlt_std_S_no)
+    lblconmsg2.config(text=x2)
+    selectdatas1()
+def selectdatas1():
+    data=mydbcon.mydbconnection()
+    result=data.cursor()
+    result.execute("select * from Student_Mark_List")
+    i=0
+    for ai_saravanan in result:
+      for j in range(len(ai_saravanan)):
+          lbldisplay=Entry(resultframe2,width=10,fg="blue")
+          lbldisplay.grid(row=i,column=j)
+          lbldisplay.insert(END,ai_saravanan[j])
+      i=i+1
 
 # Menu Bar :
 menulist=Menu(root_student)
@@ -203,12 +220,12 @@ ety_stdss.grid(padx=10,pady=10,row=7,column=2)
   # Button Create :
 btninsert=Button(tabdisplayinframe,text='Insert',font=("Times New Roman", 10),activebackground="blue",activeforeground="red",command=inserttodb)
 btninsert.grid(row=10,column=1)
-btnselc=Button(tabdisplayinframe,text="Select",font=("Times New Roman", 10),activebackground="blue",activeforeground="red",command=selectdatas)
-btnselc.grid(row=10,column=2)
+# btnselc=Button(tabdisplayinframe,text="Select",font=("Times New Roman", 10),activebackground="blue",activeforeground="red",command=selectdatas)
+# btnselc.grid(row=10,column=2)
 btnclear=Button(tabdisplayinframe,text="Clear",font=("Times New Roman", 10),activebackground="blue",activeforeground="red")
-btnclear.grid(row=10,column=3)
+btnclear.grid(row=10,column=2)
 btnExit=Button(tabdisplayinframe,text="Exit",font=("Times New Roman", 10),activebackground="blue",activeforeground="red",command=Quit)
-btnExit.grid(row=10,column=4)
+btnExit.grid(row=10,column=3)
 
   # Db connect :
 # msg=mydbcon.returnMsg()
@@ -223,7 +240,7 @@ tabdisplayinframe=Frame(tabupdate,width=root_student.winfo_screenwidth(),height=
 tabdisplayinframe.pack()
 
   # Title Create :
-lbl_stdtitile1=Label(tabdisplayinframe,text="Inserting Student Details :",font=("Times New Roman", 10))
+lbl_stdtitile1=Label(tabdisplayinframe,text="Updating Student Details :",font=("Times New Roman", 10))
 lbl_stdtitile1.grid(pady=10,row=0,columnspan=10)
 lbl_std_S_no=Label(tabdisplayinframe,text="S_No",font=("Times New Roman", 10))
 lbl_std_S_no.grid(pady=10,row=1,column=1)
@@ -266,9 +283,9 @@ btnupdate.grid(row=11,column=1)
 # btnclear1=Button(tabdisplayinframe,text="Select",font=("Times New Roman", 10),activebackground="blue",activeforeground="red",command=selectdatas)
 # btnclear1.grid(row=11,column=2)
 btnclear=Button(tabdisplayinframe,text="Clear",font=("Times New Roman", 10),activebackground="blue",activeforeground="red")
-btnclear.grid(row=11,column=3)
+btnclear.grid(row=11,column=2)
 btnExit=Button(tabdisplayinframe,text="Exit",font=("Times New Roman", 10),activebackground="blue",activeforeground="red",command=Quit)
-btnExit.grid(row=11,column=4)
+btnExit.grid(row=11,column=3)
 
   # Db connect :
 # msg=mydbcon.returnMsg()
@@ -279,4 +296,38 @@ resultframe1=Frame(tabdisplayinframe,width=800,height=600,bg="black")
 resultframe1.grid(row=13,columnspan=5)
 
 
+# Delete :
+tabdisplayinframe=Frame(tabDelete,width=root_student.winfo_screenwidth(),height=root_student.winfo_screenheight())
+tabdisplayinframe.pack()
+
+
+# Titile Creating :
+frme_ttl=Label(tabdisplayinframe,text="Deleting Studen Name :",font=("Times New Roman", 10))
+frme_ttl.grid(pady=10,row=0,columnspan=10)
+dlt_std_S_no=Label(tabdisplayinframe,text="S_No",font=("Times New Roman", 10))
+dlt_std_S_no.grid(pady=10,row=2,column=1)
+# dlt_std_st_name=Label(tabdisplayinframe,text="Name Of The Student",font=("Times New Roman", 10))
+# dlt_std_st_name.grid(pady=10,row=3,column=1)
+
+# Value Entry :
+ety_std_sno=Entry(tabdisplayinframe)
+ety_std_sno.grid(padx=10,row=2,column=2)
+# ety_std_name=Entry(tabdisplayinframe)
+# ety_std_name.grid(padx=10,row=3,column=2)
+#  Button :
+dlt_btn1=Button(tabdisplayinframe,text="Delete",font=("Times New Roman", 10),activebackground="blue",activeforeground="red",command=delete)
+dlt_btn1.grid(padx=10,row=13,column=2)
+clr_btn1=Button(tabdisplayinframe,text="Clear",font=("Times New Roman", 10),activebackground="blue",activeforeground="red",command=Quit)
+clr_btn1.grid(row=13,column=3,padx=10,pady=10)
+
+# Db Connect Msg:
+lblconmsg2=Label(tabdisplayinframe,text="",font=("Times New Roman", 10))
+lblconmsg2.grid(row=14,column=2,pady=10)
+
+resultframe2=Frame(tabdisplayinframe,width=800,height=600,bg="black")
+resultframe2.grid(row=15,columnspan=5)
+
+selectdatas()
+selectdatas1()
+selectdatas2()
 root_student.mainloop()

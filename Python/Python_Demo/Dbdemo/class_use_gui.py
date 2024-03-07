@@ -14,14 +14,15 @@ def MyDBConnection():
     )
 
     return dbcon
+class manuplate:
     
-def manuplate():
+    def __init__(self):
         frametop=Frame(app,bg="black",width=800,height=300,padx=10,pady=10)
         frametop.pack(side=TOP)
-        btninsert=Button(frametop,text="Insert",command=manuplate,activeforeground="red",activebackground="blue").pack(padx=10,pady=10)
+        btninsert=Button(frametop,text="Insert",command=self.insert,activeforeground="red",activebackground="blue").pack(padx=10,pady=10)
         btnupdate=Button(frametop,text="Update",activeforeground="red",activebackground="blue").pack(padx=10,pady=10)
         btndelete=Button(frametop,text="Delete",activeforeground="red",activebackground="blue").pack(padx=10,pady=10)
-class manuplate:    
+    
     def insert(self):
 
         details1=Tk()
@@ -34,7 +35,7 @@ class manuplate:
         lbltit=Label(frameinsert,text="Insert Into DB Demo")
         lbltit.grid(row=0,columnspan=5)
 
-        insbtn=Button(frameinsert,text="Insert",font=("Times New Roman", 10),activebackground="blue",activeforeground="red",command=self.insert)
+        insbtn=Button(frameinsert,text="Insert",font=("Times New Roman", 10),activebackground="blue",activeforeground="red",command=self)
         insbtn.grid(row=15,column=1)
         # Name Creating :
         Name1=Label(frameinsert,text="Name: ",font=("Times New Roman", 10))
